@@ -3,20 +3,20 @@ kind: Deployment
 metadata:
   labels:
     app: paytm
-  name: swiggy-deploy
+  name: paytm-deploy
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: swiggy
+      app: paytm
   template:
     metadata:
       labels:
-        app: swiggy
+        app: paytm
     spec:
       containers:
       - name: cont1
-        image: rahamshaik/trainservice:latest
+        image: summu97/paytmmovies:v1
         ports:
           - containerPort: 80
 ---
@@ -27,7 +27,7 @@ metadata:
 spec:
   type: LoadBalancer
   selector:
-    app: swiggy
+    app: paytm
   ports:
     - port: 80
       targetPort: 80
