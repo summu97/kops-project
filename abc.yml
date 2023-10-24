@@ -23,11 +23,11 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: abc
+  name: paytm
 spec:
   type: LoadBalancer
   selector:
     app: paytm
   ports:
-    - port: 80
-      targetPort: 80
+    - port: 81
+      targetPort: 81
